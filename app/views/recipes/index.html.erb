@@ -1,0 +1,27 @@
+
+
+<h1>Recipes#index</h1>
+<p>Find me in app/views/recipes/index.html.erb</p>
+
+<% @img_link_temp.each do |t| %>
+<%= t %>
+<% end %>
+<br>
+<% @Items.each do |item| %>
+    <h3>카테고리:</h3> <%= item.ss_category %><br>
+    <h3>재료명:</h3> <%= item.ss_ingred %>
+    <br> <br>
+    "<%= item.ss_category %>", <%= item.ss_ingred %>
+    <br><br><br><br>
+    
+<% end %>
+<hr>
+<% @recipes.each do |i| %>
+    
+    <h3>요리명:</h3> <%= i.title %> <br>
+    <h3>이미지: </h3><%= image_tag i.img_link, size: "200x80", class:"img-thumbnail"%>
+    <h3>재료 리스트:</h3> <%= i.ingred %> <br>
+    <h3>링크:</h3> <%= i.link %> <br>
+    <h3>스크랩 횟수:</h3> <%= i.s_count %> <br>
+<% end %>
+

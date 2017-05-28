@@ -1,0 +1,21 @@
+
+<%= @selected_pick.each do |p| %>
+
+<!--=== Custom Content ===-->
+<div class="row">
+    <!--=== Content 1 ===-->
+    <div class="col-sm-4">
+        <div class="thumbnail custom-content">
+            <%= image_tag p[0].img_link, alt: "이미지 없음" %>
+            <div class="caption">
+                <h4><a href=<% p[0].link %>><%= p[0].title %></a></h4>
+                <p><%= p[1] %>% 일치</p>
+                <p><%= p[0].ingred %></p>
+                
+            </div>
+        </div><!-- /thumbnail -->
+    </div><!-- /column -->
+</div><!-- /row -->
+<!--=== End Custom Content ===-->
+
+<% end %>    

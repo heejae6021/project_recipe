@@ -1,0 +1,51 @@
+<h1>Log In</h1>
+<form class="form-horizontal">
+  
+  <%= form_tag sessions_path do %>
+    <div class="form-group">
+      <label class="sr-only" for="exampleInputEmail3">Nickname</label>
+      <%= label_tag :nickname %><br />
+      <%= text_field_tag :nickname, params[:nickname], type: "string", class: "form-control", id: "exampleInputEmail3" %>
+    </div>
+    
+    <div class="form-group">
+      <label class="sr-only" for="exampleInputPassword3">Password</label>
+      <%= label_tag :password %><br />
+      <%= password_field_tag :password, type: "password", class: "form-control", id: "exampleInputPassword3" %>
+    </div>
+    
+    <div class="checkbox">
+    <label>
+      <input type="checkbox"> Remember me
+    </label>
+    </div>
+    
+    <button type="submit" class="btn btn-default">Sign in</button>
+  <% end %>
+</form>  
+
+  
+  
+  
+  
+  
+<form class="form-horizontal">
+  <%= form_tag sessions_path do %>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Nickname</label>
+      <%= label_tag :nickname %><br />
+      <div class="col-sm-10">
+        <%= text_field_tag :nickname, params[:nickname] %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+      <%= label_tag :password %><br />
+      <div class="col-sm-10">
+        <%= password_field_tag :password %>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-default">Sign in</button>
+  <% end %>
+</form>
+

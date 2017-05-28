@@ -1,0 +1,49 @@
+
+<br> <br> <br>
+
+<div class='container'>
+    
+    <% n=0 %>
+    
+    <% @selected_pick.each do |p| %>
+        
+    <!--=== Custom Content ===-->
+    <% if n%3 == 0 %>    
+        <div class='row'>
+    <% end %>        
+    
+        <!--=== Content 1 ===-->
+        <div class="col-sm-4">
+            <div class="thumbnail custom-content">
+                
+                <% if p[0].img_link == "" %>
+                    <%= link_to image_tag('nophoto.jpg', class: "recipe_image"), p[0].link, target: :_blank %>
+                <% else %>
+                    <%= link_to image_tag(p[0].img_link, class: "recipe_image"), p[0].link, target: :_blank %>    
+                <% end %>
+                
+                
+            
+                <div class="caption">
+                    <h4><%= link_to p[0].title, p[0].link, target: :_blank %></h4>
+                    <p>선택한 재료와 <%= p[1].round(2)*100 %>% 일치 | 스크랩 횟수: <%= p[0].s_count %></p>
+                    <h4>재료:</h4>
+                    <% p[0].ingred.gsub(/\"/, '').sub(/\[/,'').sub(/\]/,'').gsub(/ /,'').split(',').each do |a| %>
+                        <%= a %>
+                        <% end %>
+                </div>
+            </div><!-- /thumbnail -->
+        </div>
+    <% if n%3 == 2 %>    
+        </div>
+    <% end %> 
+    <% n+=1 %>
+    <!-- /column -->
+    <!-- /row -->
+    <!--=== End Custom Content ===-->
+    
+    <% end %>    
+    </div>
+
+    
+</div>
